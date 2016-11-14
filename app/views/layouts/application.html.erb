@@ -9,13 +9,17 @@
   </head>
 <body>
   <nav>
-      <% %>
+      <% if !logged_in%>
         <a class="nav-font" href="/users/new">register</a>
-        <a class="nav-font" href="/sessions/login">login</a>
-      <%  %>
-        <a class="nav-font" href="/users/<%=  %>/show"><%= %></a>
+        <a class="nav-font" href="/sessions/new">login</a>
+      <% else %>
+        <a class="nav-font" href="/users/<%= current_user.id %>/show"><%= current_user.username %></a>
 
-      <% %>
+        <form action='/sessions/logout' method='POST'>
+          <input type='hidden' name ='_method' value="delete">
+          <input type='submit' value='logout' class="button logout">
+        </form>
+      <% end %>
   </nav>
   <div class="container">
       <h1><a class="overflow-header" href="/">rails overflow</a></h1>
