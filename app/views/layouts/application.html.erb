@@ -11,7 +11,7 @@
   <nav>
       <% if !logged_in%>
         <a class="nav-font" href="/users/new">register</a>
-        <a class="nav-font" href="/sessions/new">login</a>
+        <a class="nav-font" href="/users/login">login</a>
       <% else %>
         <a class="nav-font" href="/users/<%= current_user.id %>/show"><%= current_user.username %></a>
 
