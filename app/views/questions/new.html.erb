@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1>Please ask a new question</h1>
+
+   <form method="post" action="/questions">
+    <label for="question_input">Title:</label>
+
+    <input id="question_name_input" name="question[title]" type="text" value="<%= @question.try(:title) %>">
+    <br>
+    <label for="question_body_input">Body:</label>
+    <textarea rows="8" cols="70" id="question_body_input" name="question[body]" type="text" value="<%= @question.try(:body) %>"></textarea>
+    <br>
+
+    <input type="hidden" name="question[user_id]" type="text" value=<%= current_user.id %>>
+    <br>
+
+    <input type="submit" value="Create My Question" class="button">
+</div>

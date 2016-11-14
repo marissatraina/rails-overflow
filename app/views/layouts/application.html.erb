@@ -7,8 +7,22 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+<body>
+  <nav>
+      <% %>
+        <a class="nav-font" href="/users/new">register</a>
+        <a class="nav-font" href="/sessions/login">login</a>
+      <%  %>
+        <a class="nav-font" href="/users/<%=  %>/show"><%= %></a>
 
-  <body>
+      <% %>
+  </nav>
+  <div class="container">
+      <h1><a class="overflow-header" href="/">rails overflow</a></h1>
+  </div>
     <%= yield %>
+  <footer>
+    <p>A project to practice Rails by <a href='http://www.github.com/marissatraina'>Marissa Traina</a></p>
+  </footer>
   </body>
 </html>
